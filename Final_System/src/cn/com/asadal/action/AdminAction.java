@@ -618,12 +618,4 @@ public class AdminAction extends ActionSupport{
 			
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }

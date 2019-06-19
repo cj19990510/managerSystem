@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+
+		<action name="MainDemoShow" class="cn.com.asadal.studentaction.StudentAction"
+			method="MainDemoShow">
+			<result name="success">/main.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- 通讯录功能 -->
+		<action name="StudentGetAllFormalStudentMessage" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetAllFormalStudentMessage">
+			<result name="success">/StudentMessageList.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<action name="StudentLogin" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentLogin">
+			<result name="success">/main.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<!-- 获取验证码 -->
+		<action name="getRandCode" class="cn.com.asadal.studentaction.RandCodeAction"
+			method="getRandcode">
+		</action>
+		<action name="StudentExit" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentExit">
+			<result name="success">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+
+		<action name="StudentAlterSelfInfo" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentAlterSelfInfo">
+			<result name="success">/StudentCenter.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+
+		<action name="StudentAlterPasswd" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentAlterPasswd">
+			<result name="success">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+		<action name="StudentGetSingleContest" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetSingleContest">
+			<result name="success">/contestShow.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<action name="StudentGetCurrentContestAndTeacherInfo" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetCurrentContestAndTeacherInfo">
+			<result name="success">/attend.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+
+		<!-- 核心功能：学生参赛 -->
+		<action name="StudentAttendContest" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentAttendContest">
+			<result name="success">/Work-LeaderList.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- 列出所有 work表的信息 展示优秀作品演示URL -->
+		<action name="StudentGetAllWorkInfo" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetAllWorkInfo">
+			<result name="success">/Work-URLShow.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- 列出所有 work表的信息 展示参赛经验 -->
+		<action name="StudentGetExperience" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetAllWorkInfo">
+			<result name="success">/Work-ExperienceShow.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- StudentGetWorkMessage 和 LeaderGetWorkMessage 调用同一个方法 跳转不同的界面 因为两个角色不同 
+			一个是普通学生 一个是队长 -->
+		<!-- 普通学生查看作品功能 -->
+		<action name="StudentGetWorkMessage" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetWorkMessage">
+			<result name="success">/workShowMessage.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+
+		<!-- 队长查看自己参加的比赛 后续可以添加 URL和参赛经验 -->
+		<action name="Student_Leader_GetAllWorkInfo" class="cn.com.asadal.studentaction.StudentAction"
+			method="Student_Leader_GetAllWorkInfo">
+			<result name="success">/Work-LeaderList.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- StudentGetWorkMessage 和 LeaderGetWorkMessage 调用同一个方法 跳转不同的界面 因为两个角色不同 
+			一个是普通学生 一个是队长 -->
+		<!-- 队长查看作品功能 -->
+		<action name="LeaderGetWorkMessage" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetWorkMessage">
+			<result name="success">/workMessage.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- 队长修改作品信息功能 -->
+		<action name="StudentAlterWorkMessage" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentAlterWorkMessage">
+			<result name="success">/Work-LeaderList.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<!-- 列出 某个学生参加的比赛 -->
+		<action name="StudentGetSelfAttendContest" class="cn.com.asadal.studentaction.StudentAction"
+			method="StudentGetSelfAttendContest">
+			<result name="success">/Work-StuSelfAttendList.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+
+
+
+
+
+
+		<!-- below are the functions of Administrator -->
+		<action name="ManagerLogin" class="cn.com.asadal.adminaction.AdminAction"
+			method="ManagerLogin">
+			<result name="success">/AdminManage/AdminIndex.jsp</result>
+			<result name="login">/AdminManage/AttendTeacherIndex.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<!-- contest、student、teacher 增/批量增 -->
+		<action name="BatchLoadStudentInformation" class="cn.com.asadal.adminaction.AdminAction"
+			method="BatchLoadStudentInformation">
+			<result name="success">/AdminManage/BatchLoadStudentInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="BatchLoadContestInformation" class="cn.com.asadal.adminaction.AdminAction"
+			method="BatchLoadContestInformation">
+			<result name="success">/AdminManage/BatchLoadContestInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="BatchLoadTeacherInformation" class="cn.com.asadal.adminaction.AdminAction"
+			method="BatchLoadTeacherInformation">
+			<result name="success">/AdminManage/BatchLoadTeacherInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminAddSingleContestInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminAddSingleContestInfo">
+			<result name="success">/AdminManage/BatchLoadContestInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminAddSingleStudentInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminAddSingleStudentInfo">
+			<result name="success">/AdminManage/BatchLoadStudentInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminAddSingleTeacherInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminAddSingleTeacherInfo">
+			<result name="success">/AdminManage/BatchLoadTeacherInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action><!-- contest、student、teacher 增/批量增 End -->
+
+
+		<!--contest、student、teacher 删 -->
+		<action name="AdminDeleteContestInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminDeleteContestInfo">
+			<result name="success">/AdminManage/BatchLoadContestInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminDeleteStudentInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminDeleteStudentInfo">
+			<result name="success">/AdminManage/BatchLoadStudentInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminDeleteTeacherInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminDeleteTeacherInfo">
+			<result name="success">/AdminManage/BatchLoadTeacherInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action> <!--contest、student、teacher 删 End -->
+
+
+		<!--contest、student、teacher 查 -->
+		<action name="AdminGetAllContestInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetAllContestInfo">
+			<result name="success">/AdminManage/BatchLoadContestInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetAllStudentInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetAllStudentInfo">
+			<result name="success">/AdminManage/BatchLoadStudentInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetAllTeacherInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetAllTeacherInfo">
+			<result name="success">/AdminManage/BatchLoadTeacherInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action><!--contest、student、teacher End -->
+
+
+		<!-- work 表 与 attend 表 -->
+		<action name="AdminGetTeamInfoByContestName" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetTeamInfoByContestName">
+			<result name="success">/AdminManage/TeamInfoOfContest.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetCheckedTeamInfoByContestName" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetCheckedTeamInfoByContestName">
+			<result name="success">/AdminManage/TeamInfoOfContest.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetUnCheckedTeamInfoByContestName" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetUnCheckedTeamInfoByContestName">
+			<result name="success">/AdminManage/TeamInfoOfContest.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminThroughCheckedTeamByWorkId" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminThroughCheckedTeamByWorkId">
+			<result name="success">/AdminManage/PersonInfoOfTeam.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminUnThroughCheckedTeamByWorkId" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminUnThroughCheckedTeamByWorkId">
+			<result name="success">/AdminManage/PersonInfoOfTeam.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetAllPersonOfContestByContestName" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetAllPersonOfContestByContestName">
+			<result name="success">/AdminManage/AllPersonInfoInTeam.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetAllAwardContestInfo" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetAllAwardContestInfo">
+			<result name="success">/AdminManage/AllAwardContestInfo.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="AdminGetPersonOfTeamByContestName" class="cn.com.asadal.adminaction.AdminAction"
+			method="AdminGetPersonOfTeamByContestName">
+			<result name="success">/AdminManage/PersonInfoOfTeam.jsp</result>
+			<result name="error">/AdminManage/404.html</result>
+		</action>
+
+		<action name="EchartsGetContestName" class="cn.com.asadal.studentaction.StudentAction"
+			method="EchartsGetContestName">
+			<result name="success">/ContestEchartsDisplay.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+		<action name="EchartsGetContestSeriesName" class="cn.com.asadal.studentaction.StudentAction"
+			method="EchartsGetContestName">
+			<result name="success">/ContestSeriesEchartsDisplay.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+
+
+
+
+
+	</package>
+
+	<package name="echarts" extends="json-default" namespace="/echarts">
+
+
+
+		<action name="getTeam_PersonOfContest" class="cn.com.asadal.studentaction.StudentAction"
+			method="EchartsShowSingleContest_Team_Person">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="getTeam_PersonOfContestSeries" class="cn.com.asadal.studentaction.StudentAction"
+			method="EchartsShowSeriesOfContest_Team_Person">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+
+	</package>
+
+</struts>    

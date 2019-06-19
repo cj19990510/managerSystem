@@ -1,0 +1,1 @@
+{"nodes":[{"id":"第八届“中国软件杯”大学生软件设计大赛","category":"竞赛名称","des":"国家级","itemStyle":null,"name":"第八届“中国软件杯\n”大学生软件设计大赛","symbolSize":"120"}],"links":[]}

@@ -4,107 +4,123 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="css/skin_/main.css" />
-<link rel="stylesheet" type="text/css" href="css/jquery.dialog.css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/skin_/main.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.dialog.css" />
+<link rel="stylesheet" type="text/css"
+	href="g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/global.js"></script>
+<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css"
+	rel="stylesheet">
+	<script type="text/javascript"
+		src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
 <title>湖中大信科院学科竞赛管理系统</title>
-<style>
 
-</style>
 
 </head>
 
 <body>
-	<div id="container">
-		<div id="hd">
-			<div class="hd-top">
-				<h5 class="logo"></h5>
-				<s:set name="studentMessage" value="#session.studentMessage"></s:set>
-
-				<div class="setting ue-clear">
-					<ul class="setting-main ue-clear">
-						<li><a href="main.jsp">欢迎使用</a></li>
-						<li><a href="StudentCenter.jsp" target="mainIframe"><s:property
-									value="#studentMessage.CName" />同学</a></li>
-						<li><a
-							href="Student_Leader_GetAllWorkInfo.action?workMessage.CStuName=<s:property value="#studentMessage.CName"/>"
-							target="mainIframe">我的作品</a></li>
-						<li><a
-							href="StudentGetSelfAttendContest.action?student.CName=<s:property value="#studentMessage.CName"/>"
-							target="mainIframe">参赛记录</a></li>
-						<li><a href="javascript:;" class="close-btn exit"></a>Exit</li>
-					</ul>
-				</div>
-			</div>
-			<div class="marquee">
-				<div class="marquee">
-					<div class="marquee_title">
-						<span>最新消息</span>
-					</div>
-					<div class="marquee_box">
-						<ul class="marquee_list" :class="{marquee_top:animate}">
-							<li v-for="(item, index) in marqueeList"><span>{{item.name}}</span>
-								<span>在</span> <span class="red"> {{item.city}}</span> <span>获得</span>
-								<span class="red"> {{item.amount}}</span> <span>奖</span></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<script type="text/javascript" src="js/vue.min.js"></script>
-			<script type="text/javascript">
-				const vm = new Vue({
-					el : ".vueBox",
-					data : {
-						animate : false,
-						marqueeList : [
-							{
-								name : '恭喜我院 枸杞泡咖啡队',
-								city : '第十届中国大学生服务外包创新创业大赛',
-								amount : '全国一等'
-							},
-							{
-								name : '恭喜我院 第三教学楼',
-								city : '第十届中国大学生服务外包创新创业大赛',
-								amount : '全国一等'
-							},
-							{
-								name : '恭喜我院 无锡观光团',
-								city : '第十届中国大学生服务外包创新创业大赛',
-								amount : '全国二等'
-							},
-							{
-								name : '我校  ACM一队 ',
-								city : '第三届全国中医药院校大学生程序设计竞赛 ',
-								amount : '一等'
-							},
-							{
-								name : '我院学子',
-								city : '省第二届大学生网络安全技能竞赛中斩获佳绩',
-								amount : '湖南省二等'
-							}
-						]
-					},
-					created : function() {
-						setInterval(this.showMarquee, 2000);
-					},
-					methods : {
-						showMarquee : function() {
-							this.animate = true;
-							setTimeout(() => {
-								this.marqueeList.push(this.marqueeList[0]);
-								this.marqueeList.shift();
-								this.animate = false;
-							}, 500)
-						},
-					}
-				});
-			</script>
-
-
+<div class='container nav-large'>
+	<div class="sui-navbar">
+		<div class="navbar-inner">
+			<a href="#" class="sui-brand">学校竞赛管理系统</a>
+			<ul class="sui-nav">
+				<li class="active"><a href="#">首页</a></li>
+				<li><a href="#">新闻资讯</a></li>
+				<li><a href="#">报名参赛</a></li>
+				<li><a href="#">交流讨论</a></li>
+				<li><a href="#">优秀作品</a></li>
+				<li><a href="#">经验分享</a></li>
+				<li><a href="#">新闻资讯</a></li>
+				<li><a href="#">通讯录</a></li>
+				<li class="sui-dropdown"><a href="javascript:void(0);"
+					data-toggle="dropdown" class="dropdown-toggle">其他 <i
+						class="caret"></i></a>
+					<ul role="menu" class="sui-dropdown-menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">关于</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">项目组成员</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">版权</a></li>
+					</ul></li>
+			</ul>
+			<ul class="sui-nav pull-right">
+				<li><a href="#">个人中心</a></li>
+				<li><a href="#">帮助</a></li>
+			</ul>
 		</div>
+	</div>
+</div>
+	<div class="marquee_test">
+		<div class="marquee_title">
+			<span>最新消息</span>
+		</div>
+		<div class="marquee_box">
+			<ul class="marquee_list" :class="{marquee_top:animate}">
+				<li v-for="(item, index) in marqueeList"><span>{{item.name}}</span>
+					<span>在</span> <span class="red"> {{item.city}}</span> <span>获得</span>
+					<span class="red"> {{item.amount}}</span> <span>奖</span></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<script type="text/javascript">
+		const vm = new Vue({
+			el : ".vueBox",
+			data : {
+				animate : false,
+				marqueeList : [
+					{
+						name : '恭喜我院 枸杞泡咖啡队',
+						city : '第十届中国大学生服务外包创新创业大赛',
+						amount : '全国一等'
+					},
+					{
+						name : '恭喜我院 第三教学楼',
+						city : '第十届中国大学生服务外包创新创业大赛',
+						amount : '全国一等'
+					},
+					{
+						name : '恭喜我院 无锡观光团',
+						city : '第十届中国大学生服务外包创新创业大赛',
+						amount : '全国二等'
+					},
+					{
+						name : '我校  ACM一队 ',
+						city : '第三届全国中医药院校大学生程序设计竞赛 ',
+						amount : '一等'
+					},
+					{
+						name : '我院学子',
+						city : '省第二届大学生网络安全技能竞赛中斩获佳绩',
+						amount : '湖南省二等'
+					}
+				]
+			},
+			created : function() {
+				setInterval(this.showMarquee, 2000);
+			},
+			methods : {
+				showMarquee : function() {
+					this.animate = true;
+					setTimeout(() => {
+						this.marqueeList.push(this.marqueeList[0]);
+						this.marqueeList.shift();
+						this.animate = false;
+					}, 500)
+				},
+			}
+		});
+	</script>
+
+
+	</div>
 
 	</div>
 
@@ -113,7 +129,6 @@
 		<iframe width="100%" height="100%" id="mainIframe" src="body.jsp"
 			frameborder="0" name="mainIframe"></iframe>
 	</div>
-
 	<!-- 结束部分  -->
 	<div id="ft" class="ue-clear">
 		<div class="ft1 ue-clear">
@@ -187,13 +202,13 @@
 
 
 </body>
-<script type="text/javascript" src="js/core.js"></script>
-<script type="text/javascript" src="js/jquery.dialog.js"></script>
+<script type="text/javascript" src="../js/core.js"></script>
+<script type="text/javascript" src="../js/jquery.dialog.js"></script>
 <script type="text/javascript">
-	$("#bd").height($(window).height() - $("#hd").outerHeight() - 26);
+	$("#bd").height($(window).height() - 50);
 
 	$(window).resize(function(e) {
-		$("#bd").height($(window).height() - $("#hd").outerHeight() - 26);
+		$("#bd").height($(window).height() - 50);
 
 	});
 
@@ -212,7 +227,7 @@
 		$('.exitDialog').Dialog('close');
 
 		if ($(this).hasClass('ok')) {
-			window.location.href = "login.html"	;
+			window.location.href = "login.jsp"	;
 		}
 	});
 

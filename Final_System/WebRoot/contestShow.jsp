@@ -170,7 +170,8 @@ function canclePrew(){
 					zIndex: 10,
 					height: 60,
 					onChange: null
-			});				
+			});	
+			})			
 			
 			$(document).ready(function(){
 				nums = $(".main-container .info-add").length;

@@ -80,9 +80,9 @@ public class AdminAction extends ActionSupport{
 				HttpServletRequest request = ServletActionContext.getRequest();
 	 			HttpSession session = request.getSession();
 	 			session.setAttribute("manageMessage", manageMessage);
-	 			//ÅÐ¶ÏmanagerÉí·Ý  ÊÇÖ¸µ¼ÀÏÊ¦orÆÕÍ¨¹ÜÀíÔ±
-	 			if(manageMessage.getCIsAttend().equals("ÊÇ")){
-	 				System.out.println("Ö¸µ¼ÀÏÊ¦");
+	 			//ï¿½Ð¶ï¿½managerï¿½ï¿½ï¿½  ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ê¦orï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ô±
+	 			if(manageMessage.getCIsAttend().equals("ï¿½ï¿½")){
+	 				System.out.println("Ö¸ï¿½ï¿½ï¿½ï¿½Ê¦");
 	 				return LOGIN;
 	 			}
 				return SUCCESS;
@@ -97,16 +97,16 @@ public class AdminAction extends ActionSupport{
 		}
 	}
 
-    /*ÅúÁ¿ÉÏ´« Ñ§ÉúÐÅÏ¢*/
+    /*ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ñ§ï¿½ï¿½ï¿½ï¿½Ï¢*/
 	public String 	BatchLoadStudentInformation() throws Exception{
 		try{
-			String directory="/uploadfile/studentInfo";//ÔÚÏîÄ¿ÖÐÖÐ×Ô¼º´´½¨ÁË uploadfile ÎÄ¼þ¼Ð
+			String directory="/uploadfile/studentInfo";//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ uploadfile ï¿½Ä¼ï¿½ï¿½ï¿½
             String uploaddirectory=ServletActionContext.getServletContext().getRealPath(directory);
-			//Í¨¹ýÕâÌõÓï¾ä¿ÉÒÔÕÒµ½ Tomcat uploadfileÏÂ ÎÄ¼þ¼ÐµÄÎ»ÖÃ
+			//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ Tomcat uploadfileï¿½ï¿½ ï¿½Ä¼ï¿½ï¿½Ðµï¿½Î»ï¿½ï¿½
             System.out.println("This is a temp file. Tomcat will delete it after upload success. "+getUpload());
-			 InputStream is= new FileInputStream(getUpload());// uploadÊôÐÔÓëjspÒ³ÃæÖÐµÄ¶ÔÓ¦
+			 InputStream is= new FileInputStream(getUpload());// uploadï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jspÒ³ï¿½ï¿½ï¿½ÐµÄ¶ï¿½Ó¦
 			OutputStream os =new FileOutputStream(uploaddirectory+"\\"+uploadFileName);
-			//Â·¾¶ + ÎÄ¼þÃû³Æ È·¶¨Î»ÖÃ
+			//Â·ï¿½ï¿½ + ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ È·ï¿½ï¿½Î»ï¿½ï¿½
 			System.out.println(uploaddirectory);
 			System.out.println(uploadFileName);
 			byte[] buffer=new byte[1024];
@@ -129,19 +129,19 @@ public class AdminAction extends ActionSupport{
 		
 	}
 	
-	/*ÅúÁ¿ÉÏ´« ¾ºÈüÐÅÏ¢*/
+	/*ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢*/
 	public String 	BatchLoadContestInformation() throws Exception{
 		try{
-			String directory="/uploadfile/contestInfo";//ÔÚÏîÄ¿ÖÐÖÐ×Ô¼º´´½¨ÁË uploadfile ÎÄ¼þ¼Ð
+			String directory="/uploadfile/contestInfo";//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ uploadfile ï¿½Ä¼ï¿½ï¿½ï¿½
 			
 			String uploaddirectory=ServletActionContext.getServletContext().getRealPath(directory);
-			//Í¨¹ýÕâÌõÓï¾ä¿ÉÒÔÕÒµ½ Tomcat uploadfileÏÂ ÎÄ¼þ¼ÐµÄÎ»ÖÃ
+			//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ Tomcat uploadfileï¿½ï¿½ ï¿½Ä¼ï¿½ï¿½Ðµï¿½Î»ï¿½ï¿½
             System.out.println("This is a temp file. Tomcat will delete it after upload success. "+getUpload());
 			
 			
-            InputStream is= new FileInputStream(getUpload());// uploadÊôÐÔÓëjspÒ³ÃæÖÐµÄ¶ÔÓ¦
+            InputStream is= new FileInputStream(getUpload());// uploadï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jspÒ³ï¿½ï¿½ï¿½ÐµÄ¶ï¿½Ó¦
 			OutputStream os =new FileOutputStream(uploaddirectory+"\\"+uploadFileName);
-			//Â·¾¶ + ÎÄ¼þÃû³Æ È·¶¨Î»ÖÃ
+			//Â·ï¿½ï¿½ + ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ È·ï¿½ï¿½Î»ï¿½ï¿½
 			
 			System.out.println(uploaddirectory);
 			System.out.println(uploadFileName);
@@ -166,19 +166,19 @@ public class AdminAction extends ActionSupport{
 		
 	}
 	
-	 /*ÅúÁ¿ÉÏ´« ½ÌÊ¦ÐÅÏ¢*/
+	 /*ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ê¦ï¿½ï¿½Ï¢*/
 		public String 	BatchLoadTeacherInformation() throws Exception{
 			try{
-				String directory="/uploadfile/teacherInfo";//ÔÚÏîÄ¿ÖÐÖÐ×Ô¼º´´½¨ÁË uploadfile ÎÄ¼þ¼Ð
+				String directory="/uploadfile/teacherInfo";//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ uploadfile ï¿½Ä¼ï¿½ï¿½ï¿½
 				
 				String uploaddirectory=ServletActionContext.getServletContext().getRealPath(directory);
-				//Í¨¹ýÕâÌõÓï¾ä¿ÉÒÔÕÒµ½ Tomcat uploadfileÏÂ ÎÄ¼þ¼ÐµÄÎ»ÖÃ
+				//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ Tomcat uploadfileï¿½ï¿½ ï¿½Ä¼ï¿½ï¿½Ðµï¿½Î»ï¿½ï¿½
 	            System.out.println("This is a temp file. Tomcat will delete it after upload success. "+getUpload());
 				
 				
-	            InputStream is= new FileInputStream(getUpload());// uploadÊôÐÔÓëjspÒ³ÃæÖÐµÄ¶ÔÓ¦
+	            InputStream is= new FileInputStream(getUpload());// uploadï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jspÒ³ï¿½ï¿½ï¿½ÐµÄ¶ï¿½Ó¦
 				OutputStream os =new FileOutputStream(uploaddirectory+"\\"+uploadFileName);
-				//Â·¾¶ + ÎÄ¼þÃû³Æ È·¶¨Î»ÖÃ
+				//Â·ï¿½ï¿½ + ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ È·ï¿½ï¿½Î»ï¿½ï¿½
 				
 				System.out.println(uploaddirectory);
 				System.out.println(uploadFileName);
@@ -206,16 +206,16 @@ public class AdminAction extends ActionSupport{
 		
 		
 		/**
-		 * ¹ÜÀíÔ±Ìí¼Óµ¥¸ö¾ºÈüÐÅÏ¢
+		 * ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		 * @return
 		 * @throws Exception
-		 * 2019Äê4ÔÂ22ÈÕ 13:05:35
+		 * 2019ï¿½ï¿½4ï¿½ï¿½22ï¿½ï¿½ 13:05:35
 		 */
 		public String AdminAddSingleContestInfo() throws Exception{
 			try{
 				String directory="/img/contest_picture";
 	            String uploaddirectory=ServletActionContext.getServletContext().getRealPath(directory);
-	            //²»°üº¬ÎÄ¼þ  ²»¶Ô
+	            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½  ï¿½ï¿½ï¿½ï¿½
 	            if(getUpload()==null){
 	            	if(adminDAOImpl.addContest(contest)){
 	            		AdminGetAllContestInfo();
@@ -252,10 +252,10 @@ public class AdminAction extends ActionSupport{
 	
 	
 	/**
-	 * ¹ÜÀíÔ±Ìí¼Óµ¥¸öÑ§ÉúÐÅÏ¢
+	 * ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Óµï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * @return
 	 * @throws Exception
-	 * 2019Äê4ÔÂ22ÈÕ 13:05:35
+	 * 2019ï¿½ï¿½4ï¿½ï¿½22ï¿½ï¿½ 13:05:35
 	 */
 	public String AdminAddSingleStudentInfo() throws Exception{
 		try{
@@ -264,7 +264,7 @@ public class AdminAction extends ActionSupport{
 			String directory="/img/stu_identity_card";
             String uploaddirectory=ServletActionContext.getServletContext().getRealPath(directory);
 			
-            //²»°üº¬ÎÄ¼þ  ²»¶Ô
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½  ï¿½ï¿½ï¿½ï¿½
             if(getUpload()==null){
             	
             	if(adminDAOImpl.addStudent(student)){
@@ -304,10 +304,10 @@ public class AdminAction extends ActionSupport{
 	}
 	
 	/**
-	 * ¹ÜÀíÔ±Ìí¼Óµ¥¸ö½ÌÊ¦ÐÅÏ¢
+	 * ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Ê¦ï¿½ï¿½Ï¢
 	 * @return
 	 * @throws Exception
-	 * 2019Äê4ÔÂ22ÈÕ 13:06:10
+	 * 2019ï¿½ï¿½4ï¿½ï¿½22ï¿½ï¿½ 13:06:10
 	 */
 	public String AdminAddSingleTeacherInfo() throws Exception{
 		try{
@@ -381,7 +381,7 @@ public class AdminAction extends ActionSupport{
 	
 	
 	
-	/*²é*/
+	/*ï¿½ï¿½*/
 	
 	public String AdminGetAllContestInfo() throws Exception{
 		try{
@@ -448,12 +448,12 @@ public class AdminAction extends ActionSupport{
 	
 	
 	
-	/*ÏµÍ³ºËÐÄ  ¶Ôwork±íºÍattend±íµÄ´¦Àí*/
+	/*ÏµÍ³ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½workï¿½ï¿½ï¿½attendï¿½ï¿½Ä´ï¿½ï¿½ï¿½*/
 	
 	
 	public String AdminGetTeamInfoByContestName() throws Exception{
 		try{
-			//¸ù¾Ý±ÈÈüÃû³Æ ²é³ö¶ÓÎéÐÅÏ¢
+			//ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 			List<TWorks> AdminGetTeamInfoByContestName = adminDAOImpl.getTeamInfoByContestName(works.getCContestName());
             String contestNameprocess = works.getCContestName();
 			if(AdminGetTeamInfoByContestName!=null){
@@ -518,13 +518,13 @@ public class AdminAction extends ActionSupport{
 		}
 	}
 	
-	/*Í¨¹ýÉóºË¶ÓÎé*/
+	/*Í¨ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½*/
 	public String AdminThroughCheckedTeamByWorkId() throws Exception{
 		try{
-			System.out.println("ÉóºËÀÏÊ¦ÐÕÃû:"+works.getCCheckedTeacherName());
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ê¦ï¿½ï¿½ï¿½ï¿½:"+works.getCCheckedTeacherName());
 			if(adminDAOImpl.throughCheckedTeamByWorkId(works.getCId())){
-				//Ö´ÐÐÐÞ¸ÄÖ®ºó Òª½øÐÐÒ»´Î²éÑ¯¹¤×÷  Í¨¹ý/²»Í¨¹ýÉóºË ½çÃæÔÚpersonofteam½çÃæ  
-				//Ô­Òò ÉóºËÐèÒª¿´µ½ËùÓÐµÄÑ§Éú  ¶ø teamofcontestÖ»ÊÇÒ»¸öÔ¤ÀÀ
+				//Ö´ï¿½ï¿½ï¿½Þ¸ï¿½Ö®ï¿½ï¿½ Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½  Í¨ï¿½ï¿½/ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½personofteamï¿½ï¿½ï¿½ï¿½  
+				//Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ñ§ï¿½ï¿½  ï¿½ï¿½ teamofcontestÖ»ï¿½ï¿½Ò»ï¿½ï¿½Ô¤ï¿½ï¿½
 				AdminGetPersonOfTeamByContestName();
 				return SUCCESS;
 			}else{
@@ -538,7 +538,7 @@ public class AdminAction extends ActionSupport{
 		}
 	}
 	
-	/*²»Í¨¹ýÉóºË¶ÓÎé*/
+	/*ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½*/
 	public String AdminUnThroughCheckedTeamByWorkId() throws Exception{
 		try{
 			
@@ -556,7 +556,7 @@ public class AdminAction extends ActionSupport{
 		}
 	}
 	
-	/*Ä³¸ö±ÈÈü ²Î¼ÓµÄËùÓÐ¶ÓÔ±ÐÅÏ¢*/
+	/*Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¼Óµï¿½ï¿½ï¿½ï¿½Ð¶ï¿½Ô±ï¿½ï¿½Ï¢*/
 	public String AdminGetAllPersonOfContestByContestName() throws Exception{
 		try{
 			List<TWorks> AllPersonInTeamOfContest = adminDAOImpl.getAllPersonInTeamOfContestByContestName(works.getCContestName());
@@ -598,7 +598,7 @@ public class AdminAction extends ActionSupport{
 		}
 	}
 	
-	/*Ä³¸ö¶ÓÎé ËùÓÐ¶ÓÔ±ÐÅÏ¢*/
+	/*Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¶ï¿½Ô±ï¿½ï¿½Ï¢*/
 	public String AdminGetPersonOfTeamByContestName() throws Exception{
 		try{
 			List<TWorks> PersonOfTeamInfo = adminDAOImpl.getPersonOfTeamByContestNameAndTeamName(works.getCContestName(),works.getCTeamName());

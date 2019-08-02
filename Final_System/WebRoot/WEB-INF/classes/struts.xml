@@ -23,9 +23,6 @@
 			<result name="error">/login.jsp</result>
 		</action>
 		<!-- 获取验证码 -->
-		<action name="getRandCode" class="cn.com.asadal.studentaction.RandCodeAction"
-			method="getRandcode">
-		</action>
 		<action name="StudentExit" class="cn.com.asadal.studentaction.StudentAction"
 			method="StudentExit">
 			<result name="success">/login.jsp</result>

@@ -13,23 +13,17 @@
 	href="g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" />
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/global.js"></script>
-<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css"
-	rel="stylesheet">
-	<script type="text/javascript"
-		src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
 <title>湖中大信科院学科竞赛管理系统</title>
-
-
 </head>
-
 <body>
 <div class='container nav-large'>
 	<div class="sui-navbar">
-		<div class="navbar-inner">
-			<a href="#" class="sui-brand">学校竞赛管理系统</a>
-			<ul class="sui-nav">
+		<div class="navbar-inner" style="height: 40px">
+			<a href="#" class="sui-brand" style="font-size:30px">湖南中医药大学学科竞赛管理系统</a>
+			<ul class="sui-nav" style="height:60px;font-size:19px">
 				<li class="active"><a href="#">首页</a></li>
 				<li><a href="#">新闻资讯</a></li>
 				<li><a href="#">报名参赛</a></li>
@@ -41,13 +35,13 @@
 				<li class="sui-dropdown"><a href="javascript:void(0);"
 					data-toggle="dropdown" class="dropdown-toggle">其他 <i
 						class="caret"></i></a>
-					<ul role="menu" class="sui-dropdown-menu">
+					<ul role="menu" class="sui-dropdown-menu" style="font-size:18px">
 						<li role="presentation"><a role="menuitem" tabindex="-1"
-							href="#">关于</a></li>
+							href="#">优秀指导老师</a></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1"
-							href="#">项目组成员</a></li>
+							href="#">获奖综述</a></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1"
-							href="#">版权</a></li>
+							href="#">软件著作者</a></li>
 					</ul></li>
 			</ul>
 			<ul class="sui-nav pull-right">
@@ -63,7 +57,7 @@
 		</div>
 		<div class="marquee_box">
 			<ul class="marquee_list" :class="{marquee_top:animate}">
-				<li v-for="(item, index) in marqueeList"><span>{{item.name}}</span>
+				<li v-for="(item,index) in marqueeList"><span>{{item.name}}</span>
 					<span>在</span> <span class="red"> {{item.city}}</span> <span>获得</span>
 					<span class="red"> {{item.amount}}</span> <span>奖</span></li>
 			</ul>
@@ -118,12 +112,8 @@
 			}
 		});
 	</script>
-
-
 	</div>
-
 	</div>
-
 	<!-- 中间部分 主体 -->
 	<div id="bd">
 		<iframe width="100%" height="100%" id="mainIframe" src="body.jsp"

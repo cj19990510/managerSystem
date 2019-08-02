@@ -287,22 +287,6 @@ public class StudentAction extends ActionSupport {
 		}
 	}
 
-	public void validate() {
-		String randcode1 = (String) ActionContext.getContext().getSession().get("CHECKCODE");
-		if(randcode1.isEmpty()){
-			if (!randCode.equalsIgnoreCase(randcode1)) {
-				alter al = new alter();
-				try {
-					al.put(ServletActionContext.getResponse(), "ÑéÖ¤Âë´íÎó");
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-
-	}
-
 	public String StudentExit() throws Exception {
 		try {
 			HttpServletRequest request = ServletActionContext.getRequest();

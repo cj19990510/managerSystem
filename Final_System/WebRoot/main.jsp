@@ -8,10 +8,24 @@
 <link rel="stylesheet" type="text/css" href="css/skin_/main.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.dialog.css" />
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+   function autoScroll(obj){
+      $(obj).find('ul').animate({
+         marginTop: '-2.8rem'
+      },1000,function(){
+         $(this).css({marginTop : "0px"});
+         var li  =$("#new_ul").children().first().clone()
+         $("#new_ul li:last").after(li);
+         $("#new_ul li:first").remove();
+      })
+   }
+   $(function(){
+      setInterval('autoScroll("#news")',2000);
+   }) 
+</script>
 <script type="text/javascript" src="js/global.js"></script>
 <title>湖中大信科院学科竞赛管理系统</title>
 <style>
-
 </style>
 
 </head>
@@ -38,71 +52,16 @@
 					</ul>
 				</div>
 			</div>
-			<div class="marquee">
-				<div class="marquee">
-					<div class="marquee_title">
-						<span>最新消息</span>
-					</div>
-					<div class="marquee_box">
-						<ul class="marquee_list" :class="{marquee_top:animate}">
-							<li v-for="(item, index) in marqueeList"><span>{{item.name}}</span>
-								<span>在</span> <span class="red"> {{item.city}}</span> <span>获得</span>
-								<span class="red"> {{item.amount}}</span> <span>奖</span></li>
-						</ul>
-					</div>
-				</div>
+			<div id="news"
+				style="background-color:white;height:
+			2.8rem;overflow:hidden;line-height: 45px;">
+				<ul style="margin-top:0!important" id="new_ul">
+					<li><a href="#">恭喜无锡观光团在第十届服务外包大赛中获得全国二等奖</a></li>
+					<li><a href="#">恭喜第三栋教学楼在第十届服务外包大赛中获得全国二等奖</a></li>
+					<li><a href="#">恭喜无锡观光团在第十届服务外包大赛中获得全国二等奖</a></li>
+					<li><a href="#">恭喜我校在ICCP女生专场中获得我校第一枚ACM金奖</a></li>
+				</ul>
 			</div>
-
-			<script type="text/javascript" src="js/vue.min.js"></script>
-			<script type="text/javascript">
-				const vm = new Vue({
-					el : ".vueBox",
-					data : {
-						animate : false,
-						marqueeList : [
-							{
-								name : '恭喜我院 枸杞泡咖啡队',
-								city : '第十届中国大学生服务外包创新创业大赛',
-								amount : '全国一等'
-							},
-							{
-								name : '恭喜我院 第三教学楼',
-								city : '第十届中国大学生服务外包创新创业大赛',
-								amount : '全国一等'
-							},
-							{
-								name : '恭喜我院 无锡观光团',
-								city : '第十届中国大学生服务外包创新创业大赛',
-								amount : '全国二等'
-							},
-							{
-								name : '我校  ACM一队 ',
-								city : '第三届全国中医药院校大学生程序设计竞赛 ',
-								amount : '一等'
-							},
-							{
-								name : '我院学子',
-								city : '省第二届大学生网络安全技能竞赛中斩获佳绩',
-								amount : '湖南省二等'
-							}
-						]
-					},
-					created : function() {
-						setInterval(this.showMarquee, 2000);
-					},
-					methods : {
-						showMarquee : function() {
-							this.animate = true;
-							setTimeout(() => {
-								this.marqueeList.push(this.marqueeList[0]);
-								this.marqueeList.shift();
-								this.animate = false;
-							}, 500)
-						},
-					}
-				});
-			</script>
-
 
 		</div>
 

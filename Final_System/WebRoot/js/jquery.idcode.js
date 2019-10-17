@@ -29,8 +29,8 @@
              }else{
                  inputV=$(_set.store).val();
              }
-             
-             if(inputV.tolowercase == _storeData(_set.storeLable, null).tolowercase){
+             alert(inputV)
+             if(inputV== _storeData(_set.storeLable, null)){
                  return true;
             }else{
                  _setCodeStyle("#"+settings.e, settings.codeType.name, settings.codeType.len);                

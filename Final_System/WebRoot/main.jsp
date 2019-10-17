@@ -52,6 +52,7 @@
 					</ul>
 				</div>
 			</div>
+			<br />
 			<div id="news"
 				style="background-color:white;height:
 			2.8rem;overflow:hidden;line-height: 45px;">

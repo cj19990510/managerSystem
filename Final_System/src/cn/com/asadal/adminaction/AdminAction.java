@@ -16,8 +16,6 @@ import org.vo.TContest;
 import org.vo.TStudent;
 import org.vo.TTeacher;
 import org.vo.TWorks;
-
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import cn.com.asadal.daoimpl.AdminDAOImpl;
@@ -82,10 +80,6 @@ public class AdminAction extends ActionSupport{
 				HttpServletRequest request = ServletActionContext.getRequest();
 	 			HttpSession session = request.getSession();
 	 			session.setAttribute("manageMessage", manageMessage);
-<<<<<<< HEAD
-=======
-	 			System.out.println(manageMessage.getCIsAttend());
->>>>>>> 646394d31bda135581b4d86103077e567cf54e5f
 	 			//判断manager身份  是指导老师or普通管理员
 	 			if(manageMessage.getCIsAttend().equals("是")){
 	 				System.out.println("指导老师");

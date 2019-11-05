@@ -1,4 +1,7 @@
 /cn/
+<<<<<<< HEAD
 /hibernate.cfg.xml
+=======
+>>>>>>> 646394d31bda135581b4d86103077e567cf54e5f
 /org/
 /struts.xml

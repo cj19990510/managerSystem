@@ -52,11 +52,10 @@
 					</ul>
 				</div>
 			</div>
-			<br />
 			<div id="news"
 				style="background-color:white;height:
-			2.8rem;overflow:hidden;line-height: 45px;">
-				<ul style="margin-top:0!important" id="new_ul">
+			2.0rem;overflow:hidden;line-height:40px;">
+				<ul style="margin-top:0!important;margin-left: 20px" id="new_ul">
 					<li><a href="#">恭喜无锡观光团在第十届服务外包大赛中获得全国二等奖</a></li>
 					<li><a href="#">恭喜第三栋教学楼在第十届服务外包大赛中获得全国二等奖</a></li>
 					<li><a href="#">恭喜无锡观光团在第十届服务外包大赛中获得全国二等奖</a></li>

@@ -8,7 +8,6 @@
 <script src="js/select_partner_js/jquery-1.10.2.js"></script>
 <script src="js/select_partner_js/jquery-ui.js"></script>
 <link href="css/normalize.css" rel="stylesheet" />
-<link href="css/jquery-ui.css" rel="stylesheet" />
 <link href="css/jquery.idealforms.min.css" rel="stylesheet"
 	media="screen" />
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
@@ -200,7 +199,7 @@ body {
 	<div class="row">
 		<div class="eightcol last">
 
-			<!-- Begin Form -->
+			<!-- Begin Form
 			<s:set name="studentMessage" value="#session.studentMessage"></s:set>
 			<select id="sub_tea_id_select">
 				<option value="00001">00001</option>
@@ -211,7 +210,7 @@ body {
 				<option value="11003">11003</option>
 				<option value="11061032">11061032</option>
 			</select>
-
+ -->
 			<form id="my-form" action="StudentAttendContest" method="post">
 
 
@@ -330,7 +329,7 @@ body {
 var options = {
 
 	onFail: function(){
-		alert( $myform.getInvalid().length +'å¤  éæ³å­æ®µ. Please check it.' )
+		alert("请将信息补充完整")
 	},
 
 	inputs: {
@@ -355,7 +354,7 @@ var options = {
 			filters: 'exclude',
 			data: { exclude: ['default'] },
 			errors : {
-				exclude: 'éæ©å½ç±.'
+				exclude: '请输入正确的邮箱.'
 			}
 		},
 		'langs[]': {

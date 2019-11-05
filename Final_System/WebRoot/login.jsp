@@ -11,12 +11,11 @@
 <script type="text/javascript" src="js/jquery.select.js"></script>
 <script type="text/javascript" src="js/jquerysession.js"></script>
 <link href="css/jquery.idcode.css" type="text/css" rel="stylesheet">
-<script src="js/jquery.idcode.js"></script>
+	<script src="js/jquery.idcode.js"></script>
 	<script>
 		$(document).ready(function() {
 			$.idcode.setCode(); //加载生成验证码方法
 			$("form").submit(function() {
-		
 				var IsBy = $.idcode.validateCode() //调用返回值，返回值结果为true或者false
 				if (!IsBy) {
 					alert("验证码错误，请注意大小写")

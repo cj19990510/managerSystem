@@ -112,8 +112,9 @@
 			}
 		});
 	</script>
-	<!-- 中
-	 主体 -->
+	</div>
+	</div>
+	<!-- 中间部分 主体 -->
 	<div id="bd">
 		<iframe width="100%" height="100%" id="mainIframe" src="body.jsp"
 			frameborder="0" name="mainIframe"></iframe>

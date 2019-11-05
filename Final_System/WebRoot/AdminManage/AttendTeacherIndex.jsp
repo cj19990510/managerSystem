@@ -61,7 +61,6 @@
 </header>
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
-		
 		<dl id="menu-picture">
 			<dt><i class="Hui-iconfont">&#xe61a;</i> 竞赛管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -69,6 +68,14 @@
 				<li><a data-href="ContestInfoAdd.jsp" data-title="竞赛管理" href="javascript:void(0)">添加竞赛信息</a></li>
 		        <li><a data-href="AdminGetAllContestInfo.action" data-title="竞赛查看" href="javascript:void(0)">查看竞赛信息</a></li>
 			    <li><a data-href="AdminGetAllAwardContestInfo.action" data-title="获奖查看" href="javascript:void(0)">获奖信息查看</a></li>
+		
+			</ul>
+		</dd>
+		<dt><i class="Hui-iconfont">&#xe61a;</i>参赛队伍管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+				<li><a data-href="ContestInfoAdd.jsp" data-title="竞赛管理" href="javascript:void(0)">待审核</a></li>
+		        <li><a data-href="AdminGetAllContestInfo.action" data-title="竞赛查看" href="javascript:void(0)">队伍信息</a></li>
 		
 			</ul>
 		</dd>

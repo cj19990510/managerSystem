@@ -235,8 +235,9 @@ public class StudentDAOImpl implements StudentDAOInf {
 		getSession();
 		try {
 			Transaction t = session.beginTransaction();
+			//"select *  from t_contest where c_level='省部级' AND c_time > CURDATE() ORDER BY c_time ASC"
 			SQLQuery query = session.createSQLQuery(
-					"select *  from t_contest where c_level='省部级' AND c_time > CURDATE() ORDER BY c_time ASC");
+					"select *  from t_contest where c_level='省部级' ORDER BY c_time ASC");
 			query.addEntity(TContest.class);
 			if (!query.list().isEmpty()) {
 				System.out.println("main.jsp 查找省级比赛信息_时间升序排列 成功");
@@ -358,6 +359,9 @@ public class StudentDAOImpl implements StudentDAOInf {
 			query.setParameter(1, workMessage.getCStuName());
 			query.setParameter(2, workMessage.getCTeamName());
 			query.addEntity(TWorks.class);
+			if(query.list().isEmpty()){
+				return 0;
+			}
 			TWorks work = (TWorks) query.list().get(0);
 			System.out.println(work.getCId());
 			return work.getCId();

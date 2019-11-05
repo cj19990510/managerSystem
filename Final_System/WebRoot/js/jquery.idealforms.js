@@ -798,14 +798,13 @@ $.fn.idealRadioCheck = function() {
  */
 $.idealforms.errors = {
 
-  required: '姝ゅ鏄繀濉殑.',
-  number: '蹇呴』鏄暟瀛�',
-  digits: '蹇呴』鏄敮涓�殑鏁板瓧.',
-  name: '蹇呴』鑷冲皯鏈�涓瓧绗﹂暱锛屽苟涓斿彧鑳藉寘鍚瓧姣�',
-  username: '蹇呴』鍦�2涔嬮棿鍜�涓瓧绗﹂暱锛屽苟浠ュ瓧姣嶅紑澶淬�(.)',
-  pass: '蹇呴』鑷冲皯6涓瓧绗﹂暱锛屽苟涓旇嚦灏戝寘鍚竴涓暟瀛楋紝涓�釜澶у啓瀛楁瘝鍜屼竴涓皬鍐欏瓧姣�',
-  strongpass: '蹇呴』鑷冲皯涓�涓瓧绗﹂暱锛岃嚦灏戝寘鍚竴涓ぇ鍐欏瓧姣嶅拰涓�釜灏忓啓瀛楁瘝鍜屼竴涓暟瀛楁垨鐗规畩瀛楃.',
-  email: '蹇呴』鏄竴涓湁鏁堢殑e -mail鍦板潃. <em>(e.g. user@gmail.com)</em>',
+  number: '1',
+  digits: '2',
+  name: '队伍名不能为空',
+  username: '姓名不能为空',
+  pass: '密码必须大雨六位',
+  strongpass: '两次密码输入不一致请重新输入',
+  email: '请注意邮箱格式例如. <em>(e.g. user@gmail.com)</em>',
   phone: 'Must be a valid US phone number. <em>(e.g. 555-123-4567)</em>',
   zip: 'Must be a valid US zip code. <em>(e.g. 33245 or 33245-0003)</em>',
   url: 'Must be a valid URL. <em>(e.g. www.google.com)</em>',

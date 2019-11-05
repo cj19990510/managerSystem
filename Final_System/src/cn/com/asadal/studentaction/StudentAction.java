@@ -21,6 +21,7 @@ import net.sf.json.JSONObject;
 
 import org.apache.commons.lang.Validate;
 import org.apache.struts2.ServletActionContext;
+import org.junit.Test;
 import org.util.InputData;
 import org.util.MD5;
 import org.util.alter;
@@ -205,8 +206,8 @@ public class StudentAction extends ActionSupport {
 	public static void main(String args[]) {
 		StudentAction studentAction = new StudentAction();
 		try {
-			studentAction.EchartsShowSeriesOfContest_Team_Person_MakeLocalJSONFile();
-			// studentAction.EchartsShowSingleContest_Team_Person_MakeLocalJSONFile();
+			studentAction.MainDemoShow();
+		   
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -236,10 +237,10 @@ public class StudentAction extends ActionSupport {
 			List<TContest> MainDemoNationalContestInfo = studnetDAOImpl.MainDemoGetNationalContestInfo();
 			List<TContest> MainDemoProvincinalContestInfo = studnetDAOImpl.MainDemoGetProvincinalContestInfo();
 			List MainDemoNewsInfo = studnetDAOImpl.MainDemoGetNewsInfo();
-			if (MainDemoNationalContestInfo != null && MainDemoProvincinalContestInfo != null) {
+			if (MainDemoNationalContestInfo!= null && MainDemoProvincinalContestInfo != null) {
 				HttpServletRequest request = ServletActionContext.getRequest();
 				HttpSession session = request.getSession();
-				session.setAttribute("MainDemoNationalContestInfo", MainDemoNationalContestInfo);
+				session.setAttribute("MainDemoNationalContestInfo",MainDemoNationalContestInfo);
 				session.setAttribute("MainDemoProvincinalContestInfo", MainDemoProvincinalContestInfo);
 				session.setAttribute("MainDemoNewsInfo", MainDemoNewsInfo);
 				return SUCCESS;

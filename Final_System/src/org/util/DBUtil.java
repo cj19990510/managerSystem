@@ -16,8 +16,6 @@ public abstract class DBUtil {
             
            // String url ="jdbc:mysql://127.0.0.1:3306/corp_message?characterEncoding=utf8" ;
           //  Connection conn = DriverManager.getConnection(url,"root","123456") ;
-            //Զ�� root 123456
-            System.out.println("连接到"+conn);
             return conn;
 		}
 	    catch (Exception e){

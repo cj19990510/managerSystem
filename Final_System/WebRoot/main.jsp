@@ -52,7 +52,6 @@
 					</ul>
 				</div>
 			</div>
-			<br />
 			<div id="news"
 				style="background-color:white;height:
 			2.0rem;overflow:hidden;line-height:40px;">
